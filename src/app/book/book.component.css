@@ -1,0 +1,16 @@
+.mat-card{
+    margin: 12px;
+}
+
+.number-of-pages{
+    margin-left: 16px;
+}
+
+.is-read{
+    margin: 0 12px;
+    align-self: flex-start;
+}
+
+.actions{
+    align-items: center;
+}

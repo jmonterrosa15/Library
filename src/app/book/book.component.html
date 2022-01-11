@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{book.title}}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{book.author}}
+        </mat-card-subtitle>
+    </mat-card-header>  
+    <mat-card-content>
+        <span class='number-of-pages'>Pages: {{book.numberOfPages}}</span>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions align="end" class="actions">
+        <mat-checkbox (change)="onIsReadChange()" [checked]="book.isRead">IS READ</mat-checkbox>
+        <button mat-button (click)="onModify()">MODIFY</button>
+        <button mat-button color="primary" (click)="onRemove()">REMOVE</button>
+    </mat-card-actions>
+
+</mat-card>
