@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Book, Update } from '../Book';
 
 @Component({
   selector: 'book',
@@ -8,22 +9,24 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class BookComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
+    console.log(this.book);
   }
 
-  @Output() change = new EventEmitter();
+  @Input('book') book!:any;
+  @Output('isReadChange') isReadChange = new EventEmitter();
+  @Output('delete') delete = new EventEmitter();
 
-  onIsReadChange() {
-    console.log('Is read has been changed');
+  onIsReadChange(bookId:string, isReadNewValue:boolean) {
+    const update:Update={id:bookId,updates:{ isRead: isReadNewValue}};
+    this.isReadChange.emit(update);
   }
 
   onModify() {
     console.log('Modify book!');
   }
 
-  onRemove() {
-    console.log('Remove book!');
+  onRemove(bookId:string) {
+    this.delete.emit(bookId);
   }
-
-  book = { title: 'Goodbye, things!', author: 'Fumio Sasaki', numberOfPages: 3, isRead: false };
 
 }

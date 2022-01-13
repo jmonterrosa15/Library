@@ -11,6 +11,11 @@ import { FormComponent } from './form/form.component';
 import { RouterModule } from '@angular/router';
 import { AngularMaterialModule } from './angular-material.module';
 
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +25,9 @@ import { AngularMaterialModule } from './angular-material.module';
   ],
   imports: [
     BrowserModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialComponentsModule,
