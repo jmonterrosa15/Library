@@ -1,28 +1,48 @@
-<div class="book-form">
-    <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input 
-        matInput
-        placeholder="Name"
-        [formControl]="bookname"
-        required
-        >
-        <mat-error>Name is required</mat-error>
-    </mat-form-field>
-
-    <mat-form-field>
-        <mat-label>Author</mat-label>
-        <input 
-        matInput
-        placeholder="Author"
-        required
-        [formControl]="author"
-        >
-        <mat-error>Author name is required</mat-error>
-    </mat-form-field>
-</div>
-<button 
-mat-flat-button 
-color="primary" 
-(click)="onAdd(bookname.value, author.value)"
->ADD</button>
+<form [formGroup]="form" (ngSubmit)="onAdd(form.value)">
+    <div class="book-form">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input 
+            [formControl]="title"
+            matInput
+            placeholder="Name"
+            required
+            appearance="outline"
+            >
+            <mat-error>Name is required</mat-error>
+        </mat-form-field>
+    
+        <mat-form-field>
+            <mat-label>Author</mat-label>
+            <input 
+            matInput
+            placeholder="Author"
+            required
+            [formControl]="author"
+            appearance="outline"
+            >
+            <mat-error>Author name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label># Pages</mat-label>
+            <input
+            matInput
+            placeholder="0"
+            required
+            [formControl]="numberOfPages"
+            type="number"
+            appearance="outline"
+            class="right-align"
+            >
+        </mat-form-field>
+        <mat-checkbox
+        [checked]="isRead.value"
+        formControlName="isRead"
+        >IS READ</mat-checkbox>
+    </div>
+    <button 
+    mat-flat-button 
+    color="primary" 
+    [disabled]="!form.valid"
+    >ADD</button>
+</form>
