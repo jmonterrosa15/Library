@@ -9,7 +9,7 @@ import { Book, Update } from '../Book';
 export class BookComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
-    console.log(this.book);
+    
   }
 
   @Input('book') book!:any;

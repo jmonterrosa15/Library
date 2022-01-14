@@ -1,1 +1,28 @@
-<p>form works!</p>
+<div class="book-form">
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input 
+        matInput
+        placeholder="Name"
+        [formControl]="bookname"
+        required
+        >
+        <mat-error>Name is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Author</mat-label>
+        <input 
+        matInput
+        placeholder="Author"
+        required
+        [formControl]="author"
+        >
+        <mat-error>Author name is required</mat-error>
+    </mat-form-field>
+</div>
+<button 
+mat-flat-button 
+color="primary" 
+(click)="onAdd(bookname.value, author.value)"
+>ADD</button>

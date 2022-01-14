@@ -1,0 +1,10 @@
+.book-form{
+    min-width: 150px;
+    max-width: 500px;
+    display:flex;
+    flex-direction: column;
+}
+
+.book-form-field{
+    width: 100%;
+}
