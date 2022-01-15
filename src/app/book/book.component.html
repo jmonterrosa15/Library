@@ -11,9 +11,11 @@
         <span class='number-of-pages'>Pages: {{book.numberOfPages}}</span>
     </mat-card-content>
     <mat-divider inset></mat-divider>
-    <mat-card-actions align="end" class="actions">
-        <mat-checkbox (change)="onIsReadChange(book.key$, !book.isRead)" [checked]="book.isRead">IS READ</mat-checkbox>
-        <button mat-button color="primary" (click)="onRemove(book.key$)">REMOVE</button>
+    <mat-card-actions align="end">
+        <div class="actions">
+            <mat-checkbox class="the-label" (change)="onIsReadChange(book.key$, !book.isRead)" [checked]="book.isRead">IS READ</mat-checkbox>
+            <button mat-button color="primary" (click)="onRemove(book.key$)">REMOVE</button>
+        </div>
     </mat-card-actions>
 
 </mat-card>

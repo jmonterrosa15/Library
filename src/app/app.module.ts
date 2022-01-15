@@ -19,13 +19,18 @@ import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { DatabaseService } from './database.service';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import { ProjectInfoComponent } from './project-info/project-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BookComponent,
-    FormComponent
+    FormComponent,
+    NavbarComponent,
+    ProjectInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatFormFieldModule,
     ReactiveFormsModule,
     AngularMaterialModule,
+    MatBottomSheetModule,
     RouterModule.forRoot([
       { path: '**', component: HomeComponent }
     ])

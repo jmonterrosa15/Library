@@ -9,9 +9,17 @@ mat-card{
 
 .is-read{
     margin: 0 12px;
+    margin-right: 12px;
     align-self: flex-start;
 }
 
+.the-label{
+    margin-right:12px;
+}
+
 .actions{
+    display: flex;
     align-items: center;
+    justify-items: space-around;
+    margin-right:12px;
 }

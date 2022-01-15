@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Book, Update } from '../Book';
+import { Update } from './../database.service'
 
 @Component({
   selector: 'book',

@@ -1,8 +1,8 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Book } from '../Book';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormGroup, FormControl, Validators} from '@angular/forms';
+import {MatDialogRef} from '@angular/material/dialog';
 import { DatabaseService } from '../database.service';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form',
@@ -23,7 +23,7 @@ export class FormComponent implements OnInit {
     isRead:this.isRead
   });
 
-  constructor(private db:DatabaseService, public dialog:MatDialogRef<FormComponent>) { 
+  constructor(private db:DatabaseService, public dialog:MatDialogRef<FormComponent>, private _snackBar: MatSnackBar) { 
   }
 
   ngOnInit(): void {
@@ -31,7 +31,8 @@ export class FormComponent implements OnInit {
 
   onAdd(form:any){
     this.db.addBook(form);
-    this.dialog.close()
+    this.dialog.close();
+    this._snackBar.open('Book added to database!', 'OK');
   }
 }
 

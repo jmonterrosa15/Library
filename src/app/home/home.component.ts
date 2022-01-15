@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
-import { Book, Update } from '../Book';
+import { Book} from '../Book';
+import { Update } from '../database.service';
 import { DatabaseService } from '../database.service';
 import { FormComponent } from '../form/form.component';
 import {MaterialComponentsModule} from './../material-components.module';
@@ -15,12 +16,6 @@ export class HomeComponent implements OnInit {
   
   constructor(private db:DatabaseService, private dialog:MatDialog) { }
   ngOnInit(): void {
-  }
-
-  book:Book = { title: 'Another book', author: 'J. R. R. Tolkien', numberOfPages: 865, isRead: false };
-
-  onAddBook(){
-    this.db.addBook(this.book);
   }
 
   books$:Observable<any[]> = this.db.getBooks();
@@ -39,7 +34,7 @@ export class HomeComponent implements OnInit {
   //In that case, I'll have to use property binding
 
   displayForm(){
-    this.dialog.open(FormComponent, {data:this.book});
+    this.dialog.open(FormComponent);
   }
 
 }

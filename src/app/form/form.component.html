@@ -10,7 +10,7 @@
             required
             appearance="outline"
             >
-            <mat-error>Name is required</mat-error>
+            <mat-error>Required</mat-error>
         </mat-form-field>
     
         <mat-form-field>
@@ -22,7 +22,7 @@
             [formControl]="author"
             appearance="outline"
             >
-            <mat-error>Author name is required</mat-error>
+            <mat-error>Required</mat-error>
         </mat-form-field>
         <mat-form-field>
             <mat-label># Pages</mat-label>
@@ -35,21 +35,25 @@
             appearance="outline"
             class="right-align"
             >
+            <mat-error>Required</mat-error>
         </mat-form-field>
         <mat-checkbox
         [checked]="isRead.value"
         formControlName="isRead"
         >IS READ</mat-checkbox>
     </div>
-    <button
-    mat-button
-    matDialogClose
-    >
-        DISCARD
-    </button>
-    <button 
-    mat-flat-button 
-    color="primary" 
-    [disabled]="!form.valid"
-    >ADD</button>
+    <div class="form-actions">
+        <button
+        mat-button
+        matDialogClose
+        >
+            DISCARD
+        </button>
+        <button 
+        mat-flat-button 
+        color="primary" 
+        [disabled]="!form.valid"
+        >ADD</button>
+    </div>
+    
 </form>

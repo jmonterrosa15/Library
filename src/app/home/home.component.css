@@ -1,11 +1,9 @@
 .flex-container{
     display:flex;
     align-items: center;
-    border:1px solid orange;
-    background-color: #ccc;
     flex-direction: column;
     padding-bottom: 100px;
-    padding-top: 12px;
+    padding-top: 76px;
 }
 
 .add-button{

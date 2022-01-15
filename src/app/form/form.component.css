@@ -17,3 +17,9 @@ display: none;
 input.right-align {
 -moz-appearance: textfield;
 }
+
+.form-actions{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

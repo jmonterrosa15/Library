@@ -6,7 +6,3 @@ export interface Book{
     isRead: boolean;
 }
 
-export interface Update{
-    id:string;
-    updates?:any;
-}
