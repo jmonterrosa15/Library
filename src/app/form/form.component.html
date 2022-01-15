@@ -1,11 +1,12 @@
+<span matDialogTitle>Add a new book</span>
 <form [formGroup]="form" (ngSubmit)="onAdd(form.value)">
     <div class="book-form">
         <mat-form-field>
-            <mat-label>Name</mat-label>
+            <mat-label>Title</mat-label>
             <input 
             [formControl]="title"
             matInput
-            placeholder="Name"
+            placeholder="Title"
             required
             appearance="outline"
             >
@@ -40,6 +41,12 @@
         formControlName="isRead"
         >IS READ</mat-checkbox>
     </div>
+    <button
+    mat-button
+    matDialogClose
+    >
+        DISCARD
+    </button>
     <button 
     mat-flat-button 
     color="primary" 

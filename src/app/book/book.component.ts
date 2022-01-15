@@ -21,12 +21,9 @@ export class BookComponent implements OnInit {
     this.isReadChange.emit(update);
   }
 
-  onModify() {
-    console.log('Modify book!');
-  }
-
   onRemove(bookId:string) {
     this.delete.emit(bookId);
   }
+
 
 }
